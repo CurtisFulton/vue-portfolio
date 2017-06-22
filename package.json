@@ -1,0 +1,21 @@
+{
+  "name": "vue-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "SET NODE_ENV=development & webpack-dev-server --open",
+    "prod": "SET NODE_ENV=production & webpack -p"
+  },
+  "author": "Curtis Fulton",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "html-webpack-harddisk-plugin": "^0.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^3.0.0",
+    "webpack-config": "^7.0.0",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {}
+}
