@@ -5,18 +5,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 module.exports = {
-    entry: "./vue-src/vueApp.js",
+    entry: "./vue-src/main.js",
     output: {
         path: __dirname,
-        filename: path.join('public', 'javascripts', 'vueApp.bundle.js')
+        filename: path.join('public', 'javascripts', 'main.bundle.js')
     },
     module: {
         loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['env']
+                }
+            }, 
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            }
         ]
     },
     plugins: [
     	new HtmlWebpackPlugin({
-    		title: 'Home | Curtis Fulton',
     		template: path.resolve(__dirname, 'vue-src', 'template.ejs'),
             alwaysWriteToDisk: true
     	}),
