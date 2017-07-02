@@ -1,20 +1,20 @@
 <template>
   <div>
-    <v-header></v-header>
+    <v-home></v-home>
   </div>
 </template>
 
 <script>
 
-import vHeader from './components/v-header.vue';
+import vHome from './components/v-home.vue';
 
 export default {
   name: "vueApp",
-  data () {
+  data: function() {
     return {}
   },
   components: {
-    vHeader
+    vHome
   }
 }
 

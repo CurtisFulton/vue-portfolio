@@ -1,8 +1,24 @@
+const nodeEnv = process.env.NODE_ENV.trim();
+const inProd = (nodeEnv === 'production');
+
 const path = require('path');
 const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin'); 
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const extractSass = new ExtractTextPlugin({
+    filename: 'public/stylesheets/coreStyles.css',
+    disable: !inProd
+});
+const extractVue = new ExtractTextPlugin({
+    filename: 'public/stylesheets/vueStyles.css',
+    disable: !inProd
+});
+
+const sassLoaders = ['css-loader', 'postcss-loader', 'sass-loader'];
 
 module.exports = {
     entry: "./vue-src/main.js",
@@ -11,32 +27,54 @@ module.exports = {
         filename: path.join('public', 'javascripts', 'main.bundle.js')
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
                 exclude: /node_modules/,
-                query: {
-                    presets: ['env']
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
                 }
-            }, 
+            },
+            {
+                test: /\.scss$/,
+                use: extractSass.extract({
+                    fallback: 'style-loader',
+                    use: sassLoaders
+                })
+            },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                use: {
+                    loader: 'vue-loader',
+                    options: {
+                        loaders: {
+                            scss: extractVue.extract({
+                                fallback: 'vue-style-loader',
+                                use: sassLoaders
+                            })
+                        }
+                    }
+                }
             }
         ]
     },
     plugins: [
     	new HtmlWebpackPlugin({
     		template: path.resolve(__dirname, 'vue-src', 'template.ejs'),
-            alwaysWriteToDisk: true
+            filename: path.resolve(__dirname, 'views', 'index.html'),
+            alwaysWriteToDisk: !inProd
     	}),
         new HtmlWebpackHarddiskPlugin({
-            outputPath: path.resolve(__dirname, 'views')
         }),
 
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+
+        extractSass,
+        extractVue
     ],
     devServer: {
         hot: true,
