@@ -11,12 +11,13 @@ let velocityMultipler = 1.5;
 let connectionLength = 250;
 let sqrConnectionLength = Math.pow(connectionLength, 2);
 
-
 let colors = [
 	"#96858F",
 	"#6D7993",
 	"#9099A2"
 ]
+
+let animationID;
 
 // Prototypes
 
@@ -114,10 +115,16 @@ function Dot(size, color, x, y, dx, dy) {
 // Functions
 
 function initialize() {
-	canvas = document.getElementById("home-animation");
+	canvas = document.getElementById("background-animation");
 	c = canvas.getContext("2d");
 	resizeCanvas();
 	populateDots();
+
+	// Because of the way routing works, sometime the canvas may not
+	// be destroyed. So this just makes sure the animations don't
+	// stack up and cause the dots to speed up.
+	if (animationID)
+		window.cancelAnimationFrame(animationID);
 
 	// Start Animation
 	animateCanvas();
@@ -156,7 +163,7 @@ function animateCanvas() {
 
 		dot.update();
 	}
-	window.requestAnimationFrame(animateCanvas);
+	animationID = window.requestAnimationFrame(animateCanvas);
 }
 
 // Exports

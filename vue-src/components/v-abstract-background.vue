@@ -1,13 +1,29 @@
 <template>
 	<section>
-		<canvas id="home-animation"></canvas>
-		<div id="home-content">
+		<canvas id="background-animation"></canvas>
+		<div id="content">
 			<slot></slot>
 		</div>
 	</section>
 </template>
 
-<script src="../javascripts/abstract-background.js"></script>
+<script>
+import animation from "../javascripts/background-animation.js";
+
+export default {
+	name: "v-abstract-background",
+	data: function() {
+		return {
+
+		}
+	},
+	mounted: function() {
+		animation.initialize();
+		window.addEventListener('resize', animation.resize);
+	}
+}
+
+</script>
 
 <style lang="scss" scoped>
 	canvas {

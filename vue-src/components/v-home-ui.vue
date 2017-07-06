@@ -12,10 +12,10 @@
 				<nav class="row center">
 					<div class="col s12 center no-padding">
 						<ul>
-							<li><a  href="/">Home</a></li>
-							<li><a href="#">About Me</a></li>
-							<li><a href="#">Portfolio</a></li>
-							<li><a href="#">Get In Touch</a></li>
+							<li><router-link to="/">Home</router-link></li>
+							<li><router-link to="/about">About Me</router-link></li>
+							<li><router-link to="/portfolio">Portfolio</router-link></li>
+							<li><router-link to="/contact">Get In Touch</router-link></li>
 						</ul>
 					</div>
 			  	</nav>
@@ -39,7 +39,7 @@
 
 <style lang="scss" scoped>
 	nav {
-		background-color: rgba(#D5D5D5, 0.75);
+		background-color: rgba(#D5D5D5, 0);
 		box-shadow: none;
 	}
 

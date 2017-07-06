@@ -6,8 +6,8 @@
 
 <script>
 
-import vAbstractBackground from "./v-abstract-background.vue";
-import vHomeUi from "./v-home-ui.vue";
+import vAbstractBackground from "../components/v-abstract-background.vue";
+import vHomeUi from "../components/v-home-ui.vue";
 
 
 export default {
