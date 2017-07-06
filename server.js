@@ -12,7 +12,7 @@ app.engine('html', require('ejs').renderFile);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Default portfolio page
-app.get('/', function(req, res, next) {
+app.get('*', function(req, res, next) {
 	res.render('index.html');
 });
 

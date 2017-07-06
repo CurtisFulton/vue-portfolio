@@ -2,10 +2,10 @@
 	<nav class="fill-height side-nav-fixed">
 		<div class="row nav-items">
 			<ul class="col s12 row">
-				<li class="col s12 nav-item"><a class="nav-link" href="/">Home</a></li>
-				<li class="col s12 nav-item"><a class="nav-link" href="/about">About</a></li>
-				<li class="col s12 nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
-				<li class="col s12 nav-item"><a class="nav-link" href="/contact">Get In Touch</a></li>
+				<li class="col s12 nav-item"><router-link to="/" class="nav-link">Home</router-link></li>
+				<li class="col s12 nav-item"><router-link to="/about" class="nav-link">About</router-link ></li>
+				<li class="col s12 nav-item"><router-link to="/portfolio" class="nav-link">Portfolio</router-link></li>
+				<li class="col s12 nav-item"><router-link to="/contact" class="nav-link">Get In Touch</router-link></li>
 			</ul>
 		</div>
 	</nav>
