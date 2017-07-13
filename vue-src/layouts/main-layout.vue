@@ -1,10 +1,10 @@
 <template>
 	<div class="background">
 		<div class="fill-height container row">
-			<div class="fill-height col s4">
+			<div class="fill-height col s3">
 				<v-side-nav></v-side-nav>	
 			</div>
-			<div class="col s8">
+			<div class="fill-height col s9">
 				<slot></slot>
 			</div>
 		</div>
@@ -31,10 +31,12 @@ export default {
 
 <style lang="scss" scoped>
 
+@import '../sass/_variables';
+
 .background {
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(to bottom right, #D5D5D5 0%, #FFFFFF 100%);
+	background-image: $background-gradient;
 }
 
 .container {

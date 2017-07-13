@@ -1,13 +1,18 @@
 <template>
 	<main-layout>
-		
+		<v-content-container>
+			<div>
+				<v-project-gallery></v-project-gallery>
+			</div>
+		</v-content-container>
 	</main-layout>
 </template>
 
 <script>
 
-import vMainLayout from '../layouts/main-layout.vue'; 
-
+import mainLayout from '../layouts/main-layout.vue'; 
+import vContentContainer from '../components/v-content-container.vue';
+import vProjectGallery from '../components/v-project-gallery.vue';
 
 export default {
 	name: "v-home",
@@ -17,12 +22,15 @@ export default {
 		}
 	},
 	components: {
-		vMainLayout
+		mainLayout,
+		vContentContainer,
+		vProjectGallery
 	}
 }
 
 </script>
 
 <style lang="scss" scoped>
+
 
 </style>

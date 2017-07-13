@@ -25,45 +25,45 @@
 </script>
 
 <style lang="scss" scoped>
-	$navColor: rgba(#ffffff, 0.5);
+@import '../sass/variables';
 
-	.side-nav-fixed {
-		display: flex;
-		color: black;
-		justify-content: center;
-		align-items: center;
-		background-color: $navColor;
-	}
+.side-nav-fixed {
+	display: flex;
+	color: black;
+	justify-content: center;
+	align-items: center;
+	background-color: $content-background-color;
+}
 
-	.nav-items {
-		width: 100%;
+.nav-items {
+	width: 100%;
 
-		ul {
-			padding: 0;
-		}
-	}
-
-	.nav-item {
-		text-align: center;
-		width: 100%;
-		min-height: 4em;
+	ul {
 		padding: 0;
 	}
+}
 
-	.nav-link {
-		color: black;
-		background-color: inherit;
+.nav-item {
+	text-align: center;
+	width: 100%;
+	min-height: 4em;
+	padding: 0;
+}
 
-		box-shadow: none;
+.nav-link {
+	color: black;
+	background-color: inherit;
 
-		width: 100%;
-		height: 100%;
-		margin: auto;
+	box-shadow: none;
 
-		font-size: 1.4em;
+	width: 100%;
+	height: 100%;
+	margin: auto;
 
-		&:hover {
-			background-color: rgba(black, 0.2);
-		}
+	font-size: 1.4em;
+
+	&:hover {
+		background-color: rgba(black, 0.2);
 	}
+}
 </style>

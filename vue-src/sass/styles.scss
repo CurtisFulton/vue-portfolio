@@ -1,4 +1,5 @@
 @import 'normalize';
+@import 'variables';
 
 html, body {
 	height: 100%;
@@ -15,4 +16,13 @@ body {
 
 .fill-height {
 	height: 100%;
+}
+
+.fill-width {
+	width: 100%;
+}
+
+.fill-container {
+	height: 100%;
+	width: 100%;
 }

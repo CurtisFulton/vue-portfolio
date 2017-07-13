@@ -6,6 +6,8 @@ import styles from './sass/styles.scss';
 
 import Home from './pages/home.vue';
 import About from './pages/about.vue';
+import Portfolio from './pages/portfolio.vue';
+import Contact from './pages/contact.vue';
 
 Vue.use(VueRouter);
 
@@ -14,8 +16,8 @@ const router = new VueRouter({
 	routes: [
 		{ path: '/', name: 'home', component: Home },
 		{ path: '/about', name: 'about', component: About },
-		{ path: '/portfolio', name: 'portfolio', component: About },
-		{ path: '/contact', name: 'contact', component: About }
+		{ path: '/portfolio', name: 'portfolio', component: Portfolio },
+		{ path: '/contact', name: 'contact', component: Contact }
 	]
 });
 
