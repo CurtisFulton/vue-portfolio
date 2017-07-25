@@ -3,6 +3,8 @@
 let canvas;
 let c;
 
+let content;
+
 let dotArray = [];
 let numDots = 40;
 
@@ -115,6 +117,8 @@ function Dot(size, color, x, y, dx, dy) {
 // Functions
 
 function initialize() {
+	content = document.getElementById("main-content");
+
 	canvas = document.getElementById("background-animation");
 	c = canvas.getContext("2d");
 	resizeCanvas();

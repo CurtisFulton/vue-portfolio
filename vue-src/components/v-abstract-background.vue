@@ -33,10 +33,9 @@ export default {
 		z-index: -1;
 	}
 
-	div {
+	#content {
 		z-index: 1;
-		position: absolute;
 		width: 100%;
-		height: 100%;
+		height: 100vh;
 	}
 </style>

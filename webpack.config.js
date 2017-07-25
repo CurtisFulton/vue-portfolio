@@ -39,6 +39,18 @@ module.exports = {
                 }
             },
             {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                  {
+                    loader: 'url-loader',
+                    options: {
+                      limit: 8192,
+                      name: 'public/images/[name].[ext]'
+                    }
+                  }
+                ]
+            },
+            {
                 test: /\.scss$/,
                 use: extractSass.extract({
                     fallback: 'style-loader',

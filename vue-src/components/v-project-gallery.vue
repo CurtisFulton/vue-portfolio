@@ -1,6 +1,8 @@
 <template>
 	<div class="project-gallery row">
-		<v-project v-resize-project class="col s8 offset-s2 m4 offset-m1" v-for="project in projects" :key="project.name" :project=project></v-project>
+		<v-project v-resize-project v-for="project in projects" :key="project.name" :project=project>
+			
+		</v-project>
 	</div>
 </template>
 
@@ -13,10 +15,21 @@ export default {
 	data: function() {
 		return {
 			projects: [
-				{ name: "This Website" },
-				{ name: "Poll Site" },
-				{ name: "North Force" },
-				{ name: "Test" }
+				{ 
+					name: "Poll Site",
+					summary: "A Straw Poll clone using pure css and HTML",
+					img: "./public/images/poll.jpg"
+				},
+				{ 
+					name: "North Force",
+					summary: "Website for North Force Landscaping using Sass and Flex Box Grid",
+					img: "./public/images/north-force.jpg"
+				},
+				{ 
+					name: "This Website",
+					summary: "A Portfolio website built using VueJs",
+					img: "./public/images/portfolio.jpg"
+				}
 			]
 		}
 	},
@@ -26,10 +39,17 @@ export default {
 	directives: {
 		resizeProject: {
 			inserted: function(el) {
-				el.style.height = (Math.ceil(el.offsetWidth * 0.8 / 10) * 10) + "px";
+				resizeProject(el);
+				window.addEventListener("resize", function() {
+					resizeProject(el);
+				})
 			}
 		}
 	}
+}
+
+function resizeProject(el) {
+	el.style.height = (Math.ceil(el.offsetWidth * 0.8 / 100) * 100) + "px";
 }
 
 </script>
@@ -39,8 +59,8 @@ export default {
 @import '../sass/variables';
 
 .project-gallery {
-	overflow-x: none;
-	overflow-y: none;
+	margin: 0 1em;
+	text-align: center;
 }
 
 </style>

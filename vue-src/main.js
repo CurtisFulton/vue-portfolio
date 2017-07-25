@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router';
 import vueApp from './vueApp.vue';
 
+import Vuetify from 'vuetify';
 import styles from './sass/styles.scss';
 
 import Home from './pages/home.vue';
@@ -10,6 +11,7 @@ import Portfolio from './pages/portfolio.vue';
 import Contact from './pages/contact.vue';
 
 Vue.use(VueRouter);
+Vue.use(Vuetify);
 
 const router = new VueRouter({
 	mode: 'history',
@@ -25,14 +27,6 @@ const app = new Vue({
 	router,
 	render: h => h(vueApp)
 }).$mount('#app');
-
-/*
-const vue = new Vue({
-	el: '#app',
-	render: h => h(vueApp),
-	template: '<vueApp></vueApp>'
-});
-*/
 
 if (module.hot) {
 	module.hot.accept();

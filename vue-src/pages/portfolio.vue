@@ -1,9 +1,7 @@
 <template>
 	<main-layout>
 		<v-content-container>
-			<div>
-				<v-project-gallery></v-project-gallery>
-			</div>
+			<v-project-gallery></v-project-gallery>
 		</v-content-container>
 	</main-layout>
 </template>
@@ -31,6 +29,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 
 </style>
