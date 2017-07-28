@@ -1,33 +1,58 @@
 <template>
 	<main-layout>
-		<v-content-container>
-			<v-project-gallery></v-project-gallery>
-		</v-content-container>
+		<v-container fluid class="pb-5">
+			<v-layout row wrap class="project-container">
+				<template v-for="project in projects">
+					<v-flex xs12 sm12 md6 lg6 xl4 class="pa-2">
+						<v-project-card :project="project"></v-project-card>
+					</v-flex>
+				</template>
+			</v-layout>
+		</v-container>
 	</main-layout>
 </template>
 
 <script>
 
 import mainLayout from '../layouts/main-layout.vue'; 
-import vContentContainer from '../components/v-content-container.vue';
-import vProjectGallery from '../components/v-project-gallery.vue';
+import vProjectCard from '../components/v-project-card.vue'; 
 
 export default {
 	name: "v-home",
 	data: function() {
 		return {
-
+			projects: [
+				{
+					title: "Portfolio Website",
+					description: "This portfolio website built using VueJS",
+					img: "./images/portfolio.jpg",
+					liveURL: "http://www.curtisfulton.me"
+				},
+				{
+					title: "North Force Landscaping",
+					description: "North Force website made using Flex Box Grid",
+					img: "./images/north-force.jpg",
+					liveURL: "http://www.northforcelandscaping.com.au"
+				},
+				{
+					title: "Poll Site",
+					description: "A Basic CSS/HTML polling site",
+					img: "./images/poll.jpg",
+					liveURL: "http://poll.curtisfulton.me", 
+					disableLiveLink: true
+				}
+			]
 		}
 	},
 	components: {
 		mainLayout,
-		vContentContainer,
-		vProjectGallery
+		vProjectCard
 	}
 }
 
 </script>
 
 <style lang="scss" scoped>
+
 
 </style>

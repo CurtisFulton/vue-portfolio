@@ -11,8 +11,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
     filename: 'public/stylesheets/coreStyles.css',
+    publicPath: '../public',
     disable: !inProd
 });
+
 const extractVue = new ExtractTextPlugin({
     filename: 'public/stylesheets/vueStyles.css',
     disable: !inProd
