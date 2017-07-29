@@ -1,18 +1,18 @@
 <template>
 	<v-container fluid fill-width fill-height>
-		<div>
+		<div class="fill-width">
 			<v-layout row wrap class="fill-width">
 				<v-flex xs12 class="nav-item">
-					<router-link to="/"><v-btn flat large class="nav-link">Home</v-btn></router-link>
+					<v-btn to="/" flat large class="nav-link">Home</v-btn>
 				</v-flex>
 				<v-flex xs12 class="nav-item">
-					<router-link to="/about"><v-btn flat large class="nav-link">About Me</v-btn></router-link>
+					<v-btn to="/about" flat large class="nav-link">About Me</v-btn>
 				</v-flex>
 				<v-flex xs12 class="nav-item">
-					<router-link to="/portfolio"><v-btn flat large class="nav-link">Portfolio</v-btn></router-link>
+					<v-btn to="/portfolio" exact flat large class="nav-link">Portfolio</v-btn>
 				</v-flex>
 				<v-flex xs12 class="nav-item">
-					<router-link to="/blog"><v-btn flat large class="nav-link">Blog</v-btn></router-link>
+					<v-btn to="/blog" flat large class="nav-link">Blog</v-btn>
 				</v-flex>
 			</v-layout>
 		</div>
@@ -44,6 +44,7 @@
 	width: 100%;
 	margin-left: 0;
 	margin-right: 0;
+	color: inherit;
 }
 
 </style>

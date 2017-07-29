@@ -1,4 +1,7 @@
 <template>
+	<v-portfolio></v-portfolio>
+	
+		<!--
 	<main-layout>
 		<v-container fluid class="pb-5">
 			<v-layout row wrap class="project-container">
@@ -9,13 +12,17 @@
 				</template>
 			</v-layout>
 		</v-container>
+
 	</main-layout>
+		-->
 </template>
 
 <script>
 
 import mainLayout from '../layouts/main-layout.vue'; 
 import vProjectCard from '../components/v-project-card.vue'; 
+
+import vPortfolio from '../components/projects/portfolio.vue'
 
 export default {
 	name: "v-home",
@@ -26,19 +33,21 @@ export default {
 					title: "Portfolio Website",
 					description: "This portfolio website built using VueJS",
 					img: "./images/portfolio.jpg",
+					projectUrl: 'portfolio',
 					liveURL: "http://www.curtisfulton.me"
 				},
 				{
 					title: "North Force Landscaping",
 					description: "North Force website made using Flex Box Grid",
 					img: "./images/north-force.jpg",
+					projectUrl: 'north-force',
 					liveURL: "http://www.northforcelandscaping.com.au"
 				},
 				{
 					title: "Poll Site",
 					description: "A Basic CSS/HTML polling site",
 					img: "./images/poll.jpg",
-					liveURL: "http://poll.curtisfulton.me", 
+					projectUrl: 'poll',
 					disableLiveLink: true
 				}
 			]
@@ -46,7 +55,8 @@ export default {
 	},
 	components: {
 		mainLayout,
-		vProjectCard
+		vProjectCard,
+		vPortfolio
 	}
 }
 

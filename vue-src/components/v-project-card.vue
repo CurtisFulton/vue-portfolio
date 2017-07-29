@@ -12,13 +12,11 @@
 		  </div>
 		</v-card-title>
 		<v-card-actions>
-		  <a :href=project.liveURL><v-btn v-if="!project.disableLiveLink" class="brown--text" flat>Live Project</v-btn></a>
+		  <v-btn :href=project.liveURL v-if="!project.disableLiveLink" class="brown--text" flat>Live Project</v-btn>
 		  <v-spacer></v-spacer>
-		  <router-link to="#">
-			  <v-btn icon v-tooltip:bottom="{ html: 'More' }">
-			    <v-icon>more_horiz</v-icon>
-			  </v-btn>
-		  </router-link>
+		  <v-btn :to=moreURL class="grey--text text--darken-3" icon v-tooltip:bottom="{ html: 'More' }">
+		    <v-icon>more_horiz</v-icon>
+		  </v-btn>
 		</v-card-actions>
 	</v-card>
 </template>
@@ -35,7 +33,7 @@
 		props: ['project'],
 		computed: {
 			moreURL: function() {
-				return '/portfolio/' + this.project.title.replace(/\s/g, '')
+				return '/portfolio/' + this.project.projectUrl
 			}
 		}
 	}
