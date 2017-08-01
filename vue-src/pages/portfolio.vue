@@ -1,9 +1,9 @@
 <template>
-	<!-- <v-portfolio></v-portfolio> -->
-	
+	 <v-north-force></v-north-force> 
+	<!--
 	<main-layout>
-		<v-container fluid class="pb-5">
-			<v-layout row wrap class="project-container">
+		<v-container fluid class="project-container">
+			<v-layout row wrap>
 				<template v-for="project in projects">
 					<v-flex xs12 sm12 md6 lg6 xl4 class="pa-2">
 						<v-project-card :project="project"></v-project-card>
@@ -11,8 +11,7 @@
 				</template>
 			</v-layout>
 		</v-container>
-
-	</main-layout>
+	</main-layout> -->
 </template>
 
 <script>
@@ -20,7 +19,7 @@
 import mainLayout from '../layouts/main-layout.vue'; 
 import vProjectCard from '../components/v-project-card.vue'; 
 
-import vPortfolio from '../components/projects/portfolio.vue'
+import vNorthForce from '../components/projects/north-force.vue'
 
 export default {
 	name: "v-home",
@@ -54,7 +53,7 @@ export default {
 	components: {
 		mainLayout,
 		vProjectCard,
-		vPortfolio
+		vNorthForce
 	}
 }
 
@@ -62,5 +61,9 @@ export default {
 
 <style lang="scss" scoped>
 
+.project-container {
+	padding: 0.5em;
+	padding-bottom: 2em;
+}
 
 </style>

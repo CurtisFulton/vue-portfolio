@@ -5,6 +5,7 @@ import vSideNav from './v-side-nav.vue';
 import vTechnologyCard from './v-technology-card.vue';
 import vProjectBody from './v-project-body.vue';
 import vProjectTechnologies from './v-project-technologies.vue';
+import vProjectHeader from './v-project-header.vue';
 
 
 export default {
@@ -14,5 +15,6 @@ export default {
 	vSideNav,
 	vTechnologyCard,
 	vProjectBody,
-	vProjectTechnologies
+	vProjectTechnologies,
+	vProjectHeader
 }

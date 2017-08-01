@@ -1,14 +1,7 @@
 <template>
 	<main-layout>
 		<v-container fill-width fluid class="pa-0">
-			<v-layout row wrap class="title-container">
-				<v-flex sm1 md1>
-					<v-btn to="/portfolio" exact flat class=""><v-icon large class="valign">keyboard_arrow_left</v-icon></v-btn>
-				</v-flex>
-				<v-flex sm11 md10 class="center-text">
-					<h1 class="display-2">Portfolio Website</h1>
-				</v-flex>
-			</v-layout>
+			<v-project-header>Portfolio Website</v-project-header>
 			<v-container fill-height fluid class="pl-0">
 				<v-layout row wrap>
 					<v-project-body class="mt-3">

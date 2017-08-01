@@ -8,11 +8,11 @@
 		<v-card-title primary-title>
 		  <div>
 		    <div class="subheading">{{ project.title }}</div>
-		    <span class="grey--text">{{ project.description }}</span>
+		    <span class="grey--text description">{{ project.description }}</span>
 		  </div>
 		</v-card-title>
 		<v-card-actions>
-		  <v-btn :href=project.liveURL v-if="!project.disableLiveLink" class="brown--text" flat>Live Project</v-btn>
+		  <v-btn :href=project.liveURL v-if="!project.disableLiveLink" class="brown--text ml-0" flat>Live Project</v-btn>
 		  <v-spacer></v-spacer>
 		  <v-btn :to=moreURL class="grey--text text--darken-3" icon v-tooltip:bottom="{ html: 'More' }">
 		    <v-icon>more_horiz</v-icon>
@@ -43,13 +43,5 @@
 <style lang="scss" scoped>
 
 @import '../sass/variables';
-
-.btn {
-	margin: 0;
-}
-
-.card-container {
-
-}
 
 </style>

@@ -1,12 +1,13 @@
 <template>
 	<v-background>
 		<template>
-			<v-toolbar fixed class="hidden-md-and-up toolbar">
-				<v-spacer></v-spacer>
-				<v-toolbar-items class="valign">
-					<router-link to="/"><v-btn flat>Home</v-btn></router-link>
+			<v-toolbar fixed class="hidden-md-and-up toolbar halign">
+				<v-toolbar-items class="valign ma-0">
+					<v-btn to="/" flat>Home</v-btn>
+					<v-btn to="/about" flat>About Me</v-btn>
+					<v-btn to="/portfolio" flat exact>Portfolio</v-btn>
+					<v-btn to="/blog" flat>Blog</v-btn>
 				</v-toolbar-items>
-				<v-spacer></v-spacer>
 			</v-toolbar>
 		</template>
 
@@ -17,7 +18,7 @@
 					<v-side-nav></v-side-nav>
 				</v-flex>
 				<v-spacer></v-spacer>
-				<v-flex xs12 sm10 md7>
+				<v-flex xs12 sm9 md7>
 					<transition name="fade" mode="out-in">
 						<v-container fluid class="content-container elevation-1">
 							<slot></slot>
@@ -54,15 +55,22 @@ export default {
 
 @import '../sass/_variables';
 
+.btn {
+	color: inherit;
+}
+
 .main-container {
 	height: 100%;
-	padding-top: 0;
-	padding-bottom: 0;
+	padding: 0;
+
+
 }
 
 .content-container {
 	background-color: $content-background-color;
 	height: 100%;
+	padding-left: 0;
+	padding-right: 0;
 
 	overflow-y: auto;
 

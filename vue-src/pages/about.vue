@@ -1,6 +1,6 @@
 <template>
 	<v-main-layout>
-			<v-layout row class="mb-3"> 
+		<v-layout row class="mb-3"> 
 			<v-flex offset-xs1 xs10>
 				<h2 class="display-2 brown--text text--lighten-2 mt-3">About Me</h2>
 				<div class="ml-3">
