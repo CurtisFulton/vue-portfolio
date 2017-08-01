@@ -1,7 +1,6 @@
 <template>
-	<v-portfolio></v-portfolio>
+	<!-- <v-portfolio></v-portfolio> -->
 	
-		<!--
 	<main-layout>
 		<v-container fluid class="pb-5">
 			<v-layout row wrap class="project-container">
@@ -14,7 +13,6 @@
 		</v-container>
 
 	</main-layout>
-		-->
 </template>
 
 <script>

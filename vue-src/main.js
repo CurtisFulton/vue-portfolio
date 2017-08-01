@@ -11,6 +11,12 @@ import Portfolio from './pages/portfolio.vue';
 import Project from './pages/project.vue';
 import Blog from './pages/blog.vue';
 
+import components from './components/index.js';
+
+for (var i in components) {
+	Vue.component(components[i].name, components[i]);
+}
+
 Vue.use(VueRouter);
 Vue.use(Vuetify);
 

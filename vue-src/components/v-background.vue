@@ -9,7 +9,7 @@
 import vSideNav from '../components/v-side-nav.vue';
 
 export default {
-	name: "v-main-layout",
+	name: "v-background",
 	data: function() {
 		return {
 

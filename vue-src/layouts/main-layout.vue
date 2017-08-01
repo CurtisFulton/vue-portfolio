@@ -20,7 +20,7 @@
 				<v-flex xs12 sm10 md7>
 					<transition name="fade" mode="out-in">
 						<v-container fluid class="content-container elevation-1">
-								<slot></slot>
+							<slot></slot>
 						</v-container>
 					</transition>
 				</v-flex>
