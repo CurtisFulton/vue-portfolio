@@ -1,6 +1,4 @@
 <template>
-	 <v-north-force></v-north-force> 
-	<!--
 	<main-layout>
 		<v-container fluid class="project-container">
 			<v-layout row wrap>
@@ -11,7 +9,7 @@
 				</template>
 			</v-layout>
 		</v-container>
-	</main-layout> -->
+	</main-layout>
 </template>
 
 <script>
