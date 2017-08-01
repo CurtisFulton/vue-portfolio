@@ -20,6 +20,10 @@ export default {
 	mounted: function() {
 		animation.initialize();
 		window.addEventListener('resize', animation.resize);
+	},
+	beforeDestroy: function() {
+		let canvas = document.getElementByID('background-animation');
+		document.removeChild(canvas);
 	}
 }
 

@@ -6,7 +6,7 @@ let c;
 let content;
 
 let dotArray = [];
-let numDots = 40;
+let numDots = 6;
 
 let velocityMultipler = 1.5;
 
@@ -138,6 +138,18 @@ function resizeCanvas() {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 
+	if (canvas.width > 720) {
+		numDots = 25;
+	}
+
+	if (canvas.width > 1024) {
+		numDots = 40;
+	}
+
+	if (canvas.width > 1200) {
+		numDots = 50;
+	}
+
 	populateDots();
 }
 
@@ -167,7 +179,8 @@ function animateCanvas() {
 
 		dot.update();
 	}
-	animationID = window.requestAnimationFrame(animateCanvas);
+
+		animationID = window.requestAnimationFrame(animateCanvas);
 }
 
 // Exports

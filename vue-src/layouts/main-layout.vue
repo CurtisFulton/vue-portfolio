@@ -37,7 +37,7 @@ import vBackground from '../components/v-background.vue';
 import vSideNav from '../components/v-side-nav.vue';
 
 export default {
-	name: "v-main-layout",
+	name: "main-layout",
 	data: function() {
 		return {
 
@@ -60,10 +60,11 @@ export default {
 }
 
 .main-container {
-	height: 100%;
 	padding: 0;
+	height: 100%;
 
 	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .content-container {
@@ -73,8 +74,10 @@ export default {
 	padding-right: 0;
 
 	overflow-y: auto;
+	overflow-x: hidden;
 
 	@media (max-width: 1020px) {
+		overflow-y: scroll;
 		padding-top: 5.5em;
 	}
 }

@@ -1,5 +1,5 @@
 <template>
-	<main-layout>
+	<v-main-layout>
 		<v-container fluid class="project-container">
 			<v-layout row wrap>
 				<template v-for="project in projects">
@@ -9,12 +9,12 @@
 				</template>
 			</v-layout>
 		</v-container>
-	</main-layout>
+	</v-main-layout>
 </template>
 
 <script>
 
-import mainLayout from '../layouts/main-layout.vue'; 
+import vMainLayout from '../layouts/main-layout.vue'; 
 import vProjectCard from '../components/v-project-card.vue'; 
 
 import vNorthForce from '../components/projects/north-force.vue'
@@ -49,7 +49,7 @@ export default {
 		}
 	},
 	components: {
-		mainLayout,
+		vMainLayout,
 		vProjectCard,
 		vNorthForce
 	}
