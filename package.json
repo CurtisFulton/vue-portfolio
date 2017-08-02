@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "autosize": "^3.0.21",
+    "compression": "^1.7.0",
     "ejs": "^2.5.6",
     "element.scrollintoviewifneeded-polyfill": "^1.0.1",
     "materialize-css": "^0.99.0",

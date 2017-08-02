@@ -14,9 +14,7 @@
 		<v-card-actions>
 		  <v-btn :href=project.liveURL v-if="!project.disableLiveLink" class="brown--text ml-0" flat>Live Project</v-btn>
 		  <v-spacer></v-spacer>
-		  <v-btn :to=moreURL class="grey--text text--darken-3" icon v-tooltip:bottom="{ html: 'More' }">
-		    <v-icon>more_horiz</v-icon>
-		  </v-btn>
+		  <v-btn :to=moreURL class="grey--text text--darken-3" flat>About Project</v-btn>
 		</v-card-actions>
 	</v-card>
 </template>

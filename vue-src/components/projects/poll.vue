@@ -11,7 +11,7 @@
 								This was my first project in web development. The goal of this was to get a basic understanding of all the core concepts, and so I decided to keep the frameworks to a minimum. A big part of the website was the backend and getting the polling to work properly so I focused on that. Unfortunately I never go to really start on the UI side of things due to having the do the <router-link to="/portfolio/north-force">North Force Landscaping website</router-link>. I have decided to leave it as it, to keep a record what my first attempt at a website was like.
 							</p>
 							<p>
-								More info to come...
+								Currently the project is not working and haven't had time to fix it. Once it is fixed I will add the live link and finish this write up.
 							</p>
 						</div>
 					</v-project-body>

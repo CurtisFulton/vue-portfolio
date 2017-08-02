@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 
+const compression = require('compression');
+
 const app = express();
 
 // View engine
@@ -10,6 +12,8 @@ app.engine('html', require('ejs').renderFile);
 
 // Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(compression());
 
 // Default portfolio page
 app.get('*', function(req, res, next) {
