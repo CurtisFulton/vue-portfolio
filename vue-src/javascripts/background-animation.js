@@ -19,6 +19,9 @@ let colors = [
 	"#9099A2"
 ]
 
+let mouseX = 0;
+let mouseY = 0;
+
 let animationID;
 
 // Prototypes
@@ -33,6 +36,9 @@ function Dot(size, color, x, y, dx, dy) {
 	this.dx = dx;
 	this.dy = dy;
 
+	this.finalDX = dx;
+	this.finalDY = dy;
+
 	this.connections = [];
 
 	this.update = function() {
@@ -45,20 +51,54 @@ function Dot(size, color, x, y, dx, dy) {
 		c.arc(this.x, this.y, this.size, 0, 2*Math.PI);
 		c.fillStyle = this.color;
 		c.fill();
+
+		//console.log(mouseX);
 	}
 
 	this.moveDot = function() {
-		this.x += dx;
-		this.y += dy;
-
 		// Check if we have hit the walls
-		if (this.x + this.size > canvas.width ||
-			this.x - this.size < 0) { // We have hit either the left or right wall
-			dx *= -1;
-		} else if (this.y + this.size > canvas.height ||
-					this.y - this.size < 0) { // We have hit either the top or bottom
-			dy *= -1;
+		if (this.x + this.size > canvas.width) { 
+			this.dx = Math.abs(dx) * -1;
+		} else if (this.x - this.size < 0) {
+			this.dx = Math.abs(dx);
 		}
+
+		if (this.y + this.size > canvas.height) {
+			this.dy = Math.abs(dy) * -1;
+		} else if (this.y - this.size < 0) {
+			this.dy = Math.abs(dy);
+		}
+
+		// Check if we are close to the mouse
+		if (Math.abs(this.x - mouseX) < connectionLength &&
+			Math.abs(this.y - mouseY) < connectionLength) {
+			let xForce = Math.pow((connectionLength - Math.abs(this.x - mouseX)) / connectionLength, 4) * 0.03;
+			let yForce = Math.pow((connectionLength - Math.abs(this.y - mouseY)) / connectionLength, 4) * 0.03;
+
+			if (this.x - mouseX > 0) {
+				this.dx += xForce;
+			} else {
+				this.dx -= xForce;
+			}
+
+			if (this.y - mouseY > 0) {
+				this.dy += yForce;
+			} else {
+				this.dy -= yForce;
+			}
+		}
+		let normDir = this.normalizeDirection(this.dx, this.dy);
+
+		this.x += normDir.x;
+		this.y += normDir.y;
+	}
+
+	this.normalizeDirection = function(x, y) {
+		let mag = Math.sqrt(x*x + y*y);
+		return { 
+			x: x / mag, 
+			y: y / mag 
+		};
 	}
 
 	this.updateConnections = function() {
@@ -121,6 +161,9 @@ function initialize() {
 
 	canvas = document.getElementById("background-animation");
 	c = canvas.getContext("2d");
+
+	window.addEventListener('mousemove', onMouseMove);
+
 	resizeCanvas();
 	populateDots();
 
@@ -134,6 +177,12 @@ function initialize() {
 	animateCanvas();
 }
 
+function onMouseMove(event) {
+	var rect = canvas.getBoundingClientRect();
+	mouseX = event.clientX - rect.left;
+	mouseY = event.clientY - rect.top;
+}
+
 function resizeCanvas() {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
@@ -143,11 +192,11 @@ function resizeCanvas() {
 	}
 
 	if (canvas.width > 1024) {
-		numDots = 40;
+		numDots = 30;
 	}
 
 	if (canvas.width > 1200) {
-		numDots = 50;
+		numDots = 40;
 	}
 
 	populateDots();

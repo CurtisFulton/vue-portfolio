@@ -1,7 +1,7 @@
 <template>
 	<v-container fluid fill-width fill-height>
-		<div class="fill-width">
-			<v-layout row wrap class="fill-width">
+		<nav class="fill-width">
+			<v-layout row wrap class="nav-container fill-width">
 				<v-flex xs12 class="nav-item">
 					<v-btn to="/" flat large class="nav-link">Home</v-btn>
 				</v-flex>
@@ -15,7 +15,7 @@
 					<v-btn to="/blog" flat large class="nav-link">Blog</v-btn>
 				</v-flex>
 			</v-layout>
-		</div>
+		</nav>
 	</v-container>
 </template>
 
@@ -38,6 +38,10 @@
 
 .nav-item {
 	padding: 0;
+}
+
+.nav-container {
+	display: flex;
 }
 
 .nav-link {
