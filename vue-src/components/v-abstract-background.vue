@@ -20,10 +20,6 @@ export default {
 	mounted: function() {
 		animation.initialize();
 		window.addEventListener('resize', resizeDebounce(animation.resize, 250, false));
-	},
-	beforeDestroy: function() {
-		let canvas = document.getElementByID('background-animation');
-		document.removeChild(canvas);
 	}
 }
 

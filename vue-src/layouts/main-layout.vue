@@ -89,6 +89,14 @@ export default {
 
 .toolbar {
 	background-color: $paper;
+
+
+}
+
+.btn {
+	@media (max-width: 370px) {
+		width: 80px;
+	}
 }
 
 </style>

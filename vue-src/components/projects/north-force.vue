@@ -50,7 +50,8 @@
 							<p>
 								The change in colour scheme was actually what made me decide to use Sass, and leverage the variables in it. This seemed like a good idea
 								at the time, but learning the best way to structure Sass files while trying to complete a website for the first time proved difficult.
-								In the end I wasn't very happy with how my Sass files turned out, and it made it quite hard to use the variables still.
+								In the end I wasn't very happy with how my Sass files turned out, and it made it quite hard to use the variables still. However, due to this, I believe
+								I can learn from my mistakes and will be more comfortable using them in the future. 
 							</p>
 						</div>
 					</v-project-body>
