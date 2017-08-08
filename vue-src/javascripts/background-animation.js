@@ -72,8 +72,8 @@ function Dot(size, color, x, y, dx, dy) {
 		// Check if we are close to the mouse
 		if (Math.abs(this.x - mouseX) < connectionLength &&
 			Math.abs(this.y - mouseY) < connectionLength) {
-			let xForce = Math.pow((connectionLength - Math.abs(this.x - mouseX)) / connectionLength, 4) * 0.03;
-			let yForce = Math.pow((connectionLength - Math.abs(this.y - mouseY)) / connectionLength, 4) * 0.03;
+			let xForce = 0.1;
+			let yForce = 0.1;
 
 			if (this.x - mouseX > 0) {
 				this.dx += xForce;
@@ -87,6 +87,7 @@ function Dot(size, color, x, y, dx, dy) {
 				this.dy -= yForce;
 			}
 		}
+
 		let normDir = this.normalizeDirection(this.dx, this.dy);
 
 		this.x += normDir.x;
