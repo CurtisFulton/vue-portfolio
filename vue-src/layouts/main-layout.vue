@@ -1,34 +1,18 @@
 <template>
-	<v-background>
-		<template>
-			<v-toolbar fixed class="hidden-md-and-up toolbar halign">
-				<v-toolbar-items class="valign ma-0">
-					<v-btn to="/" flat>Home</v-btn>
-					<v-btn to="/about" flat>About Me</v-btn>
-					<v-btn to="/portfolio" flat exact>Portfolio</v-btn>
-					<v-btn to="/blog" flat>Blog</v-btn>
-				</v-toolbar-items>
-			</v-toolbar>
+	<v-container fill-height fill-width fluid class="background pa-0">
+		<template v-if="showSideBar">
+			<v-side-nav class="side-nav"></v-side-nav>
+		</template>
+		<template v-else>
+			<div style="height: 5em; background-color: white;">
+				
+			</div>
 		</template>
 
-		<v-container fluid class="main-container"> 
-			<div class="hidden-md-and-up"></div>
-			<v-layout row class="fill-height">
-				<v-flex md3 offset-md1 class="hidden-sm-and-down nav-bar elevation-1">
-					<v-side-nav></v-side-nav>
-				</v-flex>
-				<v-spacer></v-spacer>
-				<v-flex xs12 sm9 md7>
-					<transition name="fade" mode="out-in">
-						<v-container fluid class="content-container elevation-1">
-							<slot></slot>
-						</v-container>
-					</transition>
-				</v-flex>
-				<v-spacer></v-spacer>
-			</v-layout>
-		</v-container>
-	</v-background>
+		<main class="content">
+			<slot></slot>
+		</main>
+	</v-container>
 </template>
 
 <script>
@@ -40,7 +24,26 @@ export default {
 	name: "main-layout",
 	data: function() {
 		return {
+			showSideBar: false,
+		}
+	},
+	mounted: function() {
+		window.addEventListener('resize', this.onResize);
 
+		this.onResize();
+	},	
+	beforeDestroy: function() {
+		window.removeEventListener('resize', this.onResize);
+	},
+	methods: {
+		onResize: function() {
+			// Cross Browser width
+			var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+			if (width < 992)
+				this.showSideBar = false;
+			else 
+				this.showSideBar = true;
 		}
 	},
 	components: {
@@ -55,48 +58,28 @@ export default {
 
 @import '../sass/_variables';
 
-.btn {
-	color: inherit;
+.background {
+	background-image: $background-gradient;
+	display: flex;
 }
 
-.main-container {
-	padding: 0;
-	height: 100%;
-
-	overflow-y: auto;
-	overflow-x: hidden;
+.side-nav {
+	background-color: $content-background-color;
+	flex: 0 0 25em;
+	margin: 0;
 }
 
-.content-container {
+.content {
+	display: flex;
+
+	justify-content: center;
+
 	background-color: $content-background-color;
 	height: 100%;
-	padding-left: 0;
-	padding-right: 0;
+	width: 100%;
 
+	margin: 0em 5%;
 	overflow-y: auto;
-	overflow-x: hidden;
-
-	@media (max-width: 1020px) {
-		overflow-y: scroll;
-		padding-top: 5.5em;
-	}
-}
-
-.nav-bar {
-	background-color: $content-background-color;
-	padding: 0;
-}
-
-.toolbar {
-	background-color: $paper;
-
-
-}
-
-.btn {
-	@media (max-width: 370px) {
-		width: 80px;
-	}
 }
 
 </style>

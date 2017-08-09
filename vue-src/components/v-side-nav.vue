@@ -1,5 +1,5 @@
 <template>
-	<v-container fluid fill-width fill-height>
+	<v-container fill-width fill-height>
 		<nav class="fill-width">
 			<v-layout row wrap class="nav-container fill-width">
 				<v-flex xs12 class="nav-item">

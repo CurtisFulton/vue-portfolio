@@ -4,7 +4,7 @@
 			<v-layout row class="mb-3"> 
 				<v-flex offset-xs1 xs10>
 					<h2 class="display-2 brown--text text--lighten-2 mt-3">About Me</h2>
-					<div class="ml-3">
+					<div class="">
 						<p>
 							I've been programming since I was in primary school. I begun with C++ in grade 6,
 							and dipped my toes in LUA and VB in the following years. It wasn't until just after highschool

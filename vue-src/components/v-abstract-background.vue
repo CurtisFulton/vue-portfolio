@@ -19,11 +19,11 @@ export default {
 	},
 	mounted: function() {
 		animation.initialize();
-		window.addEventListener('resize', resizeDebounce(animation.resize, 250, false));
+		window.addEventListener('resize', debounceEvent(animation.resize, 250, false));
 	}
 }
 
-function resizeDebounce(func, wait, immediate) {
+function debounceEvent(func, wait, immediate) {
 	var timeout;
 	return function() {
 		var context = this, args = arguments;
@@ -37,6 +37,7 @@ function resizeDebounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	};
 }
+
 </script>
 
 <style lang="scss" scoped>

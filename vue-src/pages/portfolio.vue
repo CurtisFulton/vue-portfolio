@@ -59,9 +59,15 @@ export default {
 
 <style lang="scss" scoped>
 
+@import '../sass/_variables';
+
 .project-container {
-	padding: 0.5em;
+	padding: 1em 3em;
 	padding-bottom: 2em;
+
+	@media (max-width: $xs-break) {
+		padding: 0.5em 0.4em;
+	}
 }
 
 </style>
