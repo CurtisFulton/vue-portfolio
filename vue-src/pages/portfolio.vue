@@ -1,14 +1,12 @@
 <template>
 	<v-main-layout>
-		<v-container fluid class="project-container">
-			<v-layout row wrap>
-				<template v-for="project in projects">
-					<v-flex xs12 sm12 md6 lg6 xl4 class="pa-2">
-						<v-project-card :project="project"></v-project-card>
-					</v-flex>
-				</template>
-			</v-layout>
-		</v-container>
+		<v-layout row wrap class="project-gallery">
+			<template v-for="project in projects">
+				<v-flex xs12 md12 lg6 xl4 class="project-container">
+					<v-project-card :project="project"></v-project-card>
+				</v-flex>
+			</template>
+		</v-layout>
 	</v-main-layout>
 </template>
 
@@ -61,12 +59,35 @@ export default {
 
 @import '../sass/_variables';
 
-.project-container {
+.project-gallery {
+	display: flex;
+	align-content: flex-start; 
+
 	padding: 1em 3em;
-	padding-bottom: 2em;
 
 	@media (max-width: $xs-break) {
 		padding: 0.5em 0.4em;
+	}
+
+	@media (max-width: 1424px) {
+		justify-content: space-around;
+	}
+}
+
+.project-container.project-container {
+	padding-right: 1em;
+	padding-left: 1em;
+	padding-bottom: 2em;
+
+	@media (max-width: 1424px) {
+		padding-right: 5%;
+		padding-left: 5%;
+	}
+
+	@media (max-width: $sm-break) {
+		padding-right: 0.5em;
+		padding-top: 1em;
+		padding-bottom: 1em;
 	}
 }
 

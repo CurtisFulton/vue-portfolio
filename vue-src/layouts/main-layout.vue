@@ -71,7 +71,6 @@ export default {
 
 .content {
 	display: flex;
-
 	justify-content: center;
 
 	background-color: $content-background-color;
@@ -80,6 +79,7 @@ export default {
 
 	margin: 0em 5%;
 	overflow-y: auto;
+	overflow-x: hidden; 
 }
 
 </style>
