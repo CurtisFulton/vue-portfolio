@@ -5,17 +5,18 @@
 		  height="200px"
 		>
 		</v-card-media>
-		<v-card-title primary-title>
-		  <div>
-		    <div class="subheading">{{ project.title }}</div>
-		    <span class="grey--text description">{{ project.description }}</span>
-		  </div>
-		</v-card-title>
-		<v-card-actions>
-		  <v-btn :href=project.liveURL v-if="!project.disableLiveLink" class="brown--text ml-0" flat>Live Project</v-btn>
-		  <v-spacer></v-spacer>
-		  <v-btn :to=moreURL class="grey--text text--darken-3" flat>About Project</v-btn>
-		</v-card-actions>
+		<h1 class="ml-3 headline">{{ project.title }}</h1>
+		<p class="grey--text ml-3 description">{{ project.description }}</p>
+		<div class="actions">
+			<hr>
+			<v-card-actions class="actions">
+			  <v-btn :href=project.liveURL v-if="!project.disableLiveLink" class="brown--text ml-0" flat>Live Project</v-btn>
+			  <v-spacer></v-spacer>
+			  <v-btn :to=moreURL class="grey--text text--darken-3" flat>About Project</v-btn>
+			</v-card-actions>
+		</div>
+
+
 	</v-card>
 </template>
 
@@ -33,6 +34,12 @@
 			moreURL: function() {
 				return '/portfolio/' + this.project.projectUrl
 			}
+		},
+		mounted: function() {
+			var projects = document.querySelectorAll('.card-container');
+			Array.prototype.forEach.call(projects, function(project){
+			    project.removeAttribute('style');
+			});
 		}
 	}
 
@@ -41,5 +48,15 @@
 <style lang="scss" scoped>
 
 @import '../sass/variables';
+
+.card-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.actions {
+	margin-top: auto;
+}
 
 </style>

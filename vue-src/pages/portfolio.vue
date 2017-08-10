@@ -24,7 +24,7 @@ export default {
 			projects: [
 				{
 					title: "Portfolio Website",
-					description: "This portfolio website built using VueJS",
+					description: "This portfolio website built using VueJS erfdsfdsfdsfdsfdsfdsfsdfds fsdfdsf dsf sdf dsf sdf",
 					img: "./images/portfolio.jpg",
 					projectUrl: 'portfolio',
 					liveURL: "http://www.curtisfulton.me"
@@ -51,6 +51,7 @@ export default {
 		vProjectCard,
 		vNorthForce
 	}
+
 }
 
 </script>

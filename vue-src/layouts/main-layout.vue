@@ -1,12 +1,10 @@
 <template>
 	<v-container fill-height fill-width fluid class="background pa-0">
-		<template v-if="showSideBar">
+		<template v-if="showSideBar"> 
 			<v-side-nav class="side-nav"></v-side-nav>
 		</template>
-		<template v-else>
-			<div style="height: 5em; background-color: white;">
-				
-			</div>
+		<template v-else> 
+			<v-top-nav></v-top-nav>
 		</template>
 
 		<main class="content">
@@ -19,6 +17,7 @@
 
 import vBackground from '../components/v-background.vue';
 import vSideNav from '../components/v-side-nav.vue';
+import vTopNav from '../components/v-top-nav.vue';
 
 export default {
 	name: "main-layout",
@@ -47,8 +46,7 @@ export default {
 		}
 	},
 	components: {
-		vBackground,
-		vSideNav
+		vBackground
 	}
 }
 
@@ -80,6 +78,10 @@ export default {
 	margin: 0em 5%;
 	overflow-y: auto;
 	overflow-x: hidden; 
+
+	@media (max-width: $md-break){
+		padding-top: $header-height;
+	}
 }
 
 </style>
