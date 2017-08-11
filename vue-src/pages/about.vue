@@ -70,9 +70,11 @@ export default {
 
 .about-container {
 	padding: 1.5em;
-	padding-left: 2.5em;
+	padding-left: 5em;
 
-
+	@media (max-width: $sm-break) {
+		padding: 1em;
+	}
 }
 
 .display-2 {

@@ -1,5 +1,5 @@
 <template>
-	<v-toolbar fixed flat class="top-bar">
+	<v-toolbar fixed class="top-bar">
 		<v-toolbar-items>
 			<v-btn to="/" flat class="top-bar-item">Home</v-btn>
 			<v-btn to="/about" flat class="top-bar-item">About Me</v-btn>

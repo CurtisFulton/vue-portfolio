@@ -1,13 +1,13 @@
 <template>
 	<v-container fill-height fill-width fluid class="background pa-0">
 		<template v-if="showSideBar"> 
-			<v-side-nav class="side-nav"></v-side-nav>
+			<v-side-nav class="side-nav elevation-2"></v-side-nav>
 		</template>
 		<template v-else> 
 			<v-top-nav></v-top-nav>
 		</template>
 
-		<main class="content">
+		<main class="content elevation-2">
 			<slot></slot>
 		</main>
 	</v-container>
