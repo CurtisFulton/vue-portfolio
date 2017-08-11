@@ -42,7 +42,14 @@ export default {
 					img: "./images/poll.jpg",
 					projectUrl: 'poll',
 					disableLiveLink: true
-				}
+				},
+				{
+					title: "Blog",
+					description: "Work In Progress",
+					img: "",
+					projectUrl: 'poll',
+					disableLiveLink: true
+				},
 			]
 		}
 	},
@@ -61,9 +68,6 @@ export default {
 @import '../sass/_variables';
 
 .project-gallery {
-	display: flex;
-	align-content: flex-start; 
-
 	padding: 1em 3em;
 
 	@media (max-width: $xs-break) {

@@ -36,19 +36,25 @@
 
 @import '../sass/variables';
 
-.nav-item {
+.container {
 	padding: 0;
+}
+
+.nav-item {
+	padding: 0 !important;
 }
 
 .nav-container {
 	display: flex;
+	margin: 0;
 }
 
 .nav-link {
 	width: 100%;
-	margin-left: 0;
-	margin-right: 0;
+	height: 3.5em;
+	margin: 0;
 	color: inherit;
+
 }
 
 </style>

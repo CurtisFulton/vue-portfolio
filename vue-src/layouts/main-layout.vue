@@ -78,7 +78,7 @@ export default {
 	margin: 0em 5%;
 	overflow-y: auto;
 	overflow-x: hidden; 
-
+	
 	@media (max-width: $md-break){
 		padding-top: $header-height;
 	}
