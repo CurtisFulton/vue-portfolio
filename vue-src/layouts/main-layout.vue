@@ -69,7 +69,7 @@ export default {
 
 .content {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 
 	background-color: $content-background-color;
 	height: 100%;

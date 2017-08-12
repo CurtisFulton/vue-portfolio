@@ -5,7 +5,7 @@
 		  height="200px"
 		>
 		</v-card-media>
-		<h1 class="ml-3 headline">{{ project.title }}</h1>
+		<h1 class="ml-3 mt-3 headline">{{ project.title }}</h1>
 		<p class="grey--text ml-3 description">{{ project.description }}</p>
 		<div class="actions">
 			<hr>

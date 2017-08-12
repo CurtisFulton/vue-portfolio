@@ -24,21 +24,21 @@ export default {
 			projects: [
 				{
 					title: "Portfolio Website",
-					description: "This portfolio website built using VueJS erfdsfdsfdsfdsfdsfdsfsdfds fsdfdsf dsf sdf dsf sdf",
+					description: "A VueJS website built to allow me to show off any projects I work on. The design was meant to be simple/minimalistic so that all the content is easy to see and find at a glance. VuetifyJS, which is a materal design component framework, was used to aid in the UI design.",
 					img: "./images/portfolio.jpg",
 					projectUrl: 'portfolio',
 					liveURL: "http://www.curtisfulton.me"
 				},
 				{
 					title: "North Force Landscaping",
-					description: "North Force website made using Flex Box Grid",
+					description: "This website was made for a small family company in North Brisbane called North Force Landscaping. Due to it being my first website, the technologies used were kept to a minimum, so HTML, Sass and FlexBox Grid were the main things used.",
 					img: "./images/north-force.jpg",
 					projectUrl: 'north-force',
 					liveURL: "http://www.northforcelandscaping.com.au"
 				},
 				{
 					title: "Poll Site",
-					description: "A Basic CSS/HTML polling site",
+					description: "This Poll site was made as a clone of StrawPoll.me. It allows users to create a poll and vote without having make an account. The focus of this website was to learn basic back-end development, and so the server is running on NodeJS",
 					img: "./images/poll.jpg",
 					projectUrl: 'poll',
 					disableLiveLink: true
@@ -47,7 +47,7 @@ export default {
 					title: "Blog",
 					description: "Work In Progress",
 					img: "",
-					projectUrl: 'poll',
+					projectUrl: 'blog',
 					disableLiveLink: true
 				},
 			]
