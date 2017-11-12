@@ -4,18 +4,13 @@ html, body {
 	font-family: "helvetica neue", sans-serif;
 }
 
-/* Stop main container being pushed down by margins in children elements */
-main {
-	height: 100%;
-	overflow-y: auto;
-}
-
 .btn {	
 	display: inline-block;
 	text-decoration: none;
 	padding: 0.75em 1.5em;
 	color: inherit;
 	border-radius: 1px;
+	text-align: center;
 }
 
 .btn:hover {	
@@ -23,5 +18,7 @@ main {
 }
 
 .background-gradient {
+	overflow-y: auto;
+	height: 100%;
 	background-image: linear-gradient(to bottom right, #D5D5D5 0%, #FFFFFF 100%);
 }

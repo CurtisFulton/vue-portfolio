@@ -1,17 +1,17 @@
 <template>
-	<nav>
+	<header>
 		<!-- Toggle controls for hamburger menu -->
-		<label for="menu-toggle">&#9776;</label>
+		<label id="hamburger" for="menu-toggle">&#9776;</label>
 		<input type="checkbox" id="menu-toggle">
 
 		<!-- Nav Items -->
-		<section id="nav-items">
+		<nav>
 			<router-link class="btn" to="/">Home</router-link>
 			<router-link class="btn" to="/About">About Me</router-link>
 			<router-link class="btn" to="/Portfolio">Portfolio</router-link>
 			<router-link class="btn" to="/Blog">Blog</router-link>
-		</section>
-	</nav>
+		</nav>
+	</header>
 </template>
 
 <script>
@@ -29,16 +29,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-nav {
-	background: rgba(255, 255, 255, 0.0);
-	text-align: center;
-	height: 4em;
+header {
 	line-height: 2.5em;
+	background: rgba(255, 255, 255, 0.0);
+	height: 4em;
 	box-shadow: 1px 2px 1px #888888;
 }
 
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-label {
+}
+
+#hamburger {
 	margin: 0 25px 0 0;
 	font-size: 2em;
 	line-height: 2em;
@@ -50,33 +55,39 @@ label {
 }
 
 @media only screen and (max-width: 500px){
-	label {
-		display: block;
+
+	#hamburger {
+		display: flex;
+		justify-content: flex-end;
+
 		cursor: pointer;
-
-		width: 26px;
-		float: right;
-
-		margin-bottom: 0.1em; 
 	}
 
-	#nav-items {
-		position: relative;
+	nav {
 		display: none;
-		flex-direction: column;
-		z-index: 2;
-		text-align: center;
 		width: 100%;
+		height: calc(100% - 4em);
 
-		background: #FFFFFF;
-		box-shadow: 0px 0px 1px #888888;
+		flex-flow: column;
+
+		position: fixed;
+		top: 4em;
+
+		background-color: rgba(240, 240, 240, 0.975);
 	}
 
-	#nav-items a {
-		border-bottom: 1px solid #EAEAEB;
+	nav a {
+		width: 100%;
+		z-index: 1;
+		align-self: center;
+
+		border: 1px solid #EAEAEB;
+		
+		height: 3em;
+		line-height: 3em;
 	}
 
-	#menu-toggle:checked + #nav-items {
+	#menu-toggle:checked + nav {
 		display: flex;
 	}
 }
