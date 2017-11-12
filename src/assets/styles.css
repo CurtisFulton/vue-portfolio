@@ -1,0 +1,27 @@
+html, body {
+	margin: 0;
+	height: 100%;
+	font-family: "helvetica neue", sans-serif;
+}
+
+/* Stop main container being pushed down by margins in children elements */
+main {
+	height: 100%;
+	overflow-y: auto;
+}
+
+.btn {	
+	display: inline-block;
+	text-decoration: none;
+	padding: 0.75em 1.5em;
+	color: inherit;
+	border-radius: 1px;
+}
+
+.btn:hover {	
+	background-color: #D3D3D3;
+}
+
+.background-gradient {
+	background-image: linear-gradient(to bottom right, #D5D5D5 0%, #FFFFFF 100%);
+}

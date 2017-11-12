@@ -1,8 +1,8 @@
 <template>
-	<div>
-		<h1>Blog</h1>
+	<main class="background-gradient">
 		<v-nav-bar></v-nav-bar>
-	</div>
+		<h1>Blog</h1>
+	</main>
 </template>
 
 <script>
