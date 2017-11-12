@@ -6,8 +6,10 @@ import normalizeCSS from './assets/normalize.css'
 import coreCSS from './assets/styles.css'
 
 import NavBar from './components/NavBar.vue'
+import Card from './components/Card.vue'
 
 Vue.component('v-nav-bar', NavBar);
+Vue.component('v-card', Card);
 
 Vue.config.productionTip = false;
 
